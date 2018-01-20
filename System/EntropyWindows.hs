@@ -105,7 +105,6 @@ cryptGenRandom h i =
 
 cryptReleaseCtx :: HCRYPTPROV -> IO ()
 cryptReleaseCtx h = do
-   putStrLn $ "cryptReleaseCtx " ++ show h
    stat <- c_cryptReleaseCtx h 0
    if (toBool stat)
       then return ()
