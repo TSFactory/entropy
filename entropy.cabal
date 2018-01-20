@@ -67,6 +67,7 @@ library
   if os(windows)
     cpp-options: -DisWindows
     cc-options:  -DisWindows
+    build-depends: Win32
     extra-libraries: advapi32
   else
     if !os(halvm)
