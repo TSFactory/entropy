@@ -17,7 +17,7 @@ main = defaultMainWithHooks hk
  where
  hk = simpleUserHooks { buildHook = \pd lbi uh bf -> do
                                         -- let ccProg = Program "gcc" undefined undefined undefined
-                                        let hcProg = Program "ghc" undefined undefined undefined
+                                        let hcProg = simpleProgram "ghc"
                                             mConf  = lookupProgram hcProg (withPrograms lbi)
                                             err    = error "Could not determine C compiler"
                                             cc     = locationPath . programLocation  . maybe err id $ mConf
